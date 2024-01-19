@@ -11,6 +11,8 @@ type Project = {
 };
 
 function ProjectCard() {
+
+
   const filteredProjectList = useSelector(
     (state: any) => state.projectsReducer.filteredProject
   );

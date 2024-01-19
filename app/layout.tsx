@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { cn } from "@/lib/utils";
 import StarBackground from "@/components/helpers/StarBackground";
+import { Toaster } from "@/components/ui/toaster"
 
 const font = Open_Sans({ subsets: ["latin"] });
 
@@ -33,6 +34,7 @@ export default function RootLayout({
           <StarBackground />
 
           {children}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

@@ -7,18 +7,15 @@ import { CertificateCard } from "../subComponents/certification/Badge";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { addBadges } from "@/redux/features/badges/badgesSlice";
-
-type badgeType = {
-  name: string;
-  date: string;
-  imgURL: string;
-};
+import { Button } from "@/components/ui/button"
+import { ToastAction } from "@/components/ui/toast"
+import { useToast } from "@/components/ui/use-toast"
 
 function Certificate() {
-  const [loader, setLoader] = useState(false);
-
+  const [loader, setLoader] = useState(true);
+  const { toast } = useToast()
   const dispatch = useDispatch();
-  const toggleBadge = useSelector((state) => state.badgesReducer.toggleBadge);
+  const toggleBadge = useSelector((state: any) => state.badgesReducer.toggleBadge);
 
   useEffect(() => {
     async function getImage() {
@@ -34,7 +31,12 @@ function Certificate() {
       } catch (error: any) {
         console.log("Err", error.message);
         if (error.message === "Network Error") {
-          console.log("Network connection needed");
+          
+          toast({
+            title: "Network connection needed",
+            description: "There was a problem with your Network.",
+            action: <ToastAction altText="Try again" onClick={() => window.location.reload()}>Try again</ToastAction>,
+          })
         }
       }
     }

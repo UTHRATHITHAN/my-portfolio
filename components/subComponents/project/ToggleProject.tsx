@@ -5,14 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { addFilteredProject } from "@/redux/features/projects/projectsSlice";
 import axios from "axios";
 
+
 const projectTech = ["All", "React Js", "Next Js", "Node Js"];
 
 function ToggleProject() {
-  // const [All] = useState(projectsList);
   const [activeFilter, setActiveFilter] = useState("All");
   const [projectsList, setProjectsList] = useState([]);
   const dispatch = useDispatch();
-
 
   useEffect(() => {
     async function getProjects() {
@@ -21,11 +20,10 @@ function ToggleProject() {
       );
       const data = res.data;
       setProjectsList(data);
-      console.log(data)
+      console.log(data);
     }
     getProjects();
   }, []);
-
 
   useEffect(() => {
     dispatch(addFilteredProject(projectsList));
@@ -35,10 +33,8 @@ function ToggleProject() {
     setActiveFilter(item);
     setTimeout(() => {
       if (item === "All") {
-        // setFilter(All);
         dispatch(addFilteredProject(projectsList));
       } else {
-        // setFilter(All.filter((ele) => ele.tags.includes(item)));
         const filtered = projectsList.filter((ele) => ele.tags.includes(item));
         dispatch(addFilteredProject(filtered));
       }

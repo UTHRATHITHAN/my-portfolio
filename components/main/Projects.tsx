@@ -3,8 +3,8 @@ import React, {useState, useEffect} from "react";
 import ToggleProject from "../subComponents/project/ToggleProject";
 import ProjectCard from "../subComponents/project/ProjectCard";
 
-
 function Projects() {
+
 
 
   return (
