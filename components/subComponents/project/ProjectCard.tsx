@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 type Project = {
   name: string;
@@ -17,12 +18,13 @@ function ProjectCard() {
     (state: any) => state.projectsReducer.filteredProject
   );
 
-  console.log(filteredProjectList);
   return (
     <div className="flex justify-center py-10 md:w-10/12">
       <div className=" flex flex-wrap justify-center items-center  my-10 gap-x-32 gap-y-20">
         {filteredProjectList.map((ele: Project, i: number) => (
-          <div
+          <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
             className="w-[320px] h-96 bg-white rounded-md flex flex-col items-center shadow-2xl"
             key={i}
           >
@@ -46,7 +48,7 @@ function ProjectCard() {
 
             <p className="mt-3 text-black font-bold text-xl pb-2">{ele.name}</p>
             <p className="text-center text-black text-md px-2 font-sans">{ele.desc}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

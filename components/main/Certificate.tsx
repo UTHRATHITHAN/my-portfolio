@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button"
 import { ToastAction } from "@/components/ui/toast"
 import { useToast } from "@/components/ui/use-toast"
 
+
 function Certificate() {
   const [loader, setLoader] = useState(true);
   const { toast } = useToast()
@@ -58,7 +59,11 @@ function Certificate() {
 
           <div className=" flex justify-center items-center w-5/6 md:w-11/12 h-fit p-8 mt-10 rounded-sm">
             {loader ? (
+              
+<div className="h-96 grid place-content-center">
+
               <Loader className="w-8 h-8 text-gray-200 animate-spin dark:text-zinc-600 fill-white" />
+              </div>
             ) : toggleBadge.badge ? (
               <Badge />
             ) : (

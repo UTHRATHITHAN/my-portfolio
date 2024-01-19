@@ -13,7 +13,7 @@ import {education } from '@/lib/data/educationData'
 
 function Education() {
   const { theme } = useTheme();
-  console.log(theme);
+
 
   return (
     <section id="education">

@@ -20,7 +20,6 @@ function ToggleProject() {
       );
       const data = res.data;
       setProjectsList(data);
-      console.log(data);
     }
     getProjects();
   }, []);
