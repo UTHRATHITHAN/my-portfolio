@@ -15,7 +15,7 @@ function Certificate() {
   const [loader, setLoader] = useState(true);
   const { toast } = useToast()
   const dispatch = useDispatch();
-  const toggleBadge = useSelector(state => state.badgesReducer.toggleBadge);
+  const toggleBadge = useSelector((state) => state.badgesReducer.toggleBadge);
 
   useEffect(() => {
     async function getImage() {

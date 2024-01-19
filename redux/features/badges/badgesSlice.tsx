@@ -1,8 +1,19 @@
 "use client";
 
-import { createSlice} from "@reduxjs/toolkit";
+import { createSlice, PayloadAction} from "@reduxjs/toolkit";
 
-const initialState = {
+type badge = {
+
+  badges: object[]
+  toggleBadge: {
+    badge: boolean,
+    certificate: boolean,
+  }
+  badgeIndex: number
+}
+
+
+const initialState: badge = {
   badges: [],
   toggleBadge: {
     badge: true,
