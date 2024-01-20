@@ -6,17 +6,20 @@ import ToggleCertificate from "../subComponents/certification/ToggleCertificate"
 import { CertificateCard } from "../subComponents/certification/Badge";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { addBadges } from "@/redux/features/badges/badgesSlice";
+import { addBadges,toggleBadge } from "@/redux/features/badges/badgesSlice";
 import { Button } from "@/components/ui/button"
 import { ToastAction } from "@/components/ui/toast"
 import { useToast } from "@/components/ui/use-toast"
 
+interface RootState {
+
+}
 
 function Certificate() {
   const [loader, setLoader] = useState(true);
   const { toast } = useToast()
   const dispatch = useDispatch();
-  const toggleBadge = useSelector((state: any) => state.badgesReducer.toggleBadge);
+  const toggleBadge = useSelector((state: RootState) => state.badgesReducer.toggleBadge);
 
   useEffect(() => {
     async function getImage() {
