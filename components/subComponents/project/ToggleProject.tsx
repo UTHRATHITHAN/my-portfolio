@@ -3,38 +3,27 @@ import { Button } from "@/components/ui/button";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addFilteredProject } from "@/redux/features/projects/projectsSlice";
-import axios from "axios";
-
 
 const projectTech = ["All", "React Js", "Next Js", "Node Js"];
 
 function ToggleProject() {
   const [activeFilter, setActiveFilter] = useState("All");
-  const [projectsList, setProjectsList] = useState([]);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    async function getProjects() {
-      const res = await axios.get(
-        "https://65aa2b97081bd82e1d964014.mockapi.io/api/v1/projects/projects"
-      );
-      const data = res.data;
-      setProjectsList(data);
-    }
-    getProjects();
-  }, []);
+  const datafromSlice = useSelector(
+    (state) => state.projectsReducer.projectsList
+  );
 
-  useEffect(() => {
-    dispatch(addFilteredProject(projectsList));
-  }, [projectsList]);
+  dispatch(addFilteredProject(datafromSlice));
 
-  const handleWorkFilter = (item) => {
+  const handleWorkFilter =  (item) => {
     setActiveFilter(item);
     setTimeout(() => {
       if (item === "All") {
-        dispatch(addFilteredProject(projectsList));
+        dispatch(addFilteredProject(datafromSlice));
       } else {
-        const filtered = projectsList.filter((ele) => ele.tags.includes(item));
+        const filtered = datafromSlice.filter((ele) => ele.tags.includes(item));
+        console.log(filtered, " filtereed");
         dispatch(addFilteredProject(filtered));
       }
     }, 500);

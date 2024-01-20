@@ -12,19 +12,22 @@ type Project = {
 };
 
 function ProjectCard() {
-
-
   const filteredProjectList = useSelector(
     (state: any) => state.projectsReducer.filteredProject
   );
+  console.log("filteredProjectList", filteredProjectList);
 
   return (
-    <div className="flex justify-center py-10 md:w-10/12">
+    <motion.div
+      className="flex justify-center py-10 md:w-10/12"
+      animate={{ y: 100 }}
+      transition={{ duration: 0.5, delayChildren: 0.5 }}
+    >
       <div className=" flex flex-wrap justify-center items-center  my-10 gap-x-32 gap-y-20">
         {filteredProjectList.map((ele: Project, i: number) => (
           <motion.div
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
             className="w-[320px] h-96 bg-white rounded-md flex flex-col items-center shadow-2xl"
             key={i}
           >
@@ -47,11 +50,13 @@ function ProjectCard() {
             </div>
 
             <p className="mt-3 text-black font-bold text-xl pb-2">{ele.name}</p>
-            <p className="text-center text-black text-md px-2 font-sans">{ele.desc}</p>
+            <p className="text-center text-black text-md px-2 font-sans">
+              {ele.desc}
+            </p>
           </motion.div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

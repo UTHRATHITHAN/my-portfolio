@@ -16,7 +16,7 @@ function Certificate() {
   const [loader, setLoader] = useState(true);
   const { toast } = useToast()
   const dispatch = useDispatch();
-  const toggleBadge = useSelector((state) => state.badgesReducer.toggleBadge);
+  const toggleBadge = useSelector((state: any) => state.badgesReducer.toggleBadge);
 
   useEffect(() => {
     async function getImage() {
@@ -62,7 +62,7 @@ function Certificate() {
               
 <div className="h-96 grid place-content-center">
 
-              <Loader className="w-8 h-8 text-gray-200 animate-spin dark:text-zinc-600 fill-white" />
+              <Loader className="w-8 h-8 animate-spin text-gray-400 fill-white dark:text-zinc-600 dark:fill-white" />
               </div>
             ) : toggleBadge.badge ? (
               <Badge />
