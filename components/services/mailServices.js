@@ -1,29 +1,27 @@
-"use server";
-import nodemailer from 'nodemailer'
+"use client";
+import nodemailer from "nodemailer";
 
+export default async function sendMail(formData) {
+  const { name, email, subject, message } = formData;
+  let transporter = nodemailer.createTransport({
+    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 587,
+    auth: {
+      user: process.env.GMAIL_USERNAME,
+      pass: process.env.PASSWORD,
+    },
+  });
 
-
-export default async function sendMail(formData){
-const {name, email, subject, message} = formData;
-    let transporter = nodemailer.createTransport({
-        service: "gmail",
-        host: "smtp.gmail.com",
-        port: 587,
-        auth: {
-          user: process.env.GMAIL_USERNAME,
-          pass: process.env.PASSWORD,
-        },
-      });
-
-      const mailOptions = {
-        from: {
-          name,
-          address: email,
-        },
-        to: process.env.GMAIL_USERNAME,
-        subject: subject,
-        text: message,
-        html: `
+  const mailOptions = {
+    from: {
+      name,
+      address: email,
+    },
+    to: process.env.GMAIL_USERNAME,
+    subject: subject,
+    text: message,
+    html: `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -96,8 +94,8 @@ const {name, email, subject, message} = formData;
         </body>
         </html>
         `,
-            }
+  };
 
-            const emailRes = await transporter.sendMail(mailOptions);
-           return emailRes.response
+  const emailRes = await transporter.sendMail(mailOptions);
+  return emailRes.response;
 }
