@@ -1,4 +1,4 @@
-"use client";
+"use server";
 import nodemailer from 'nodemailer';
 
 export default async function sendMail(formData) {
