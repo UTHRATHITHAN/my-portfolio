@@ -1,17 +1,16 @@
 "use client";
 
-import { createSlice, PayloadAction} from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type badge = {
-
-  badges: object[]
-  toggleBadge: {
-    badge: boolean,
-    certificate: boolean,
-  }
-  badgeIndex: number
+type ToggleBadge = {
+  badge: boolean;
+  certificate: boolean;
+};
+export interface badge {
+  badges: string[];
+  toggleBadge: ToggleBadge;
+  badgeIndex: number;
 }
-
 
 const initialState: badge = {
   badges: [],
@@ -20,29 +19,26 @@ const initialState: badge = {
     certificate: false,
   },
   badgeIndex: 0,
-
 };
 
 export const badgesSlice = createSlice({
   name: "badges",
   initialState,
   reducers: {
-    addBadges: (state, action) => {
+    addBadges: (state, action: PayloadAction<string[]>) => {
       state.badges = action.payload;
     },
-    toggleBadge: (state, action) => {
+    toggleBadge: (state, action: PayloadAction<ToggleBadge>) => {
       state.toggleBadge = action.payload;
     },
-    badgeIndex: (state, action) => {
+    badgeIndex: (state, action: PayloadAction<number>) => {
       state.badgeIndex = action.payload;
     },
-  
   },
 });
 
 // we are exporting the each methods, which are there in the reducers.
-export const { addBadges, toggleBadge, badgeIndex } =
-  badgesSlice.actions;
+export const { addBadges, toggleBadge, badgeIndex } = badgesSlice.actions;
 
 // we are exporting the whole reducer. Because store need to have this below reducers.
 export default badgesSlice.reducer;

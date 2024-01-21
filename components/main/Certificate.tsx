@@ -6,20 +6,18 @@ import ToggleCertificate from "../subComponents/certification/ToggleCertificate"
 import { CertificateCard } from "../subComponents/certification/Badge";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { addBadges,toggleBadge } from "@/redux/features/badges/badgesSlice";
-import { Button } from "@/components/ui/button"
-import { ToastAction } from "@/components/ui/toast"
-import { useToast } from "@/components/ui/use-toast"
-
-interface RootState {
-
-}
+import { addBadges } from "@/redux/features/badges/badgesSlice";
+import { RootState } from "@/redux/store/store";
+import { ToastAction } from "@/components/ui/toast";
+import { useToast } from "@/components/ui/use-toast";
 
 function Certificate() {
   const [loader, setLoader] = useState(true);
-  const { toast } = useToast()
+  const { toast } = useToast();
   const dispatch = useDispatch();
-  const toggleBadge = useSelector((state: RootState) => state.badgesReducer.toggleBadge);
+  const toggleBadge = useSelector(
+    (state: RootState) => state.badge.toggleBadge
+  );
 
   useEffect(() => {
     async function getImage() {
@@ -30,17 +28,23 @@ function Certificate() {
         );
 
         dispatch(addBadges(res.data));
-       
+
         if (res.status === 200) setLoader(false);
       } catch (error: any) {
         console.log("Err", error.message);
         if (error.message === "Network Error") {
-          
           toast({
             title: "Network connection needed",
             description: "There was a problem with your Network.",
-            action: <ToastAction altText="Try again" onClick={() => window.location.reload()}>Try again</ToastAction>,
-          })
+            action: (
+              <ToastAction
+                altText="Try again"
+                onClick={() => window.location.reload()}
+              >
+                Try again
+              </ToastAction>
+            ),
+          });
         }
       }
     }
@@ -62,10 +66,8 @@ function Certificate() {
 
           <div className=" flex justify-center items-center w-5/6 md:w-11/12 h-fit p-8 mt-10 rounded-sm">
             {loader ? (
-              
-<div className="h-96 grid place-content-center">
-
-              <Loader className="w-8 h-8 animate-spin text-gray-400 fill-white dark:text-zinc-600 dark:fill-white" />
+              <div className="h-96 grid place-content-center">
+                <Loader className="w-8 h-8 animate-spin text-gray-400 fill-white dark:text-zinc-600 dark:fill-white" />
               </div>
             ) : toggleBadge.badge ? (
               <Badge />

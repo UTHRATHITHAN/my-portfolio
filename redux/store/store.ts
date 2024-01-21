@@ -1,4 +1,4 @@
-"use client";
+
 // Step - 1
 import { configureStore } from '@reduxjs/toolkit';
 import skillsReducer from '../features/skills/skillsSlice';
@@ -9,9 +9,9 @@ import projectsReducer from '../features/projects/projectsSlice';
 // Step - 2
 export const store = configureStore({
     reducer:{
-        skillsReducer,
-        badgesReducer,
-        projectsReducer
+        skill : skillsReducer,
+        badge : badgesReducer,
+        project : projectsReducer
     }
 })
 
