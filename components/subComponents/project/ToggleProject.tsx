@@ -7,6 +7,14 @@ import { RootState } from '@/redux/store/store'
 
 const projectTech = ["All", "React Js", "Next Js", "Node Js"];
 
+
+type Project = {
+  name: string,
+  desc: string,
+  img: string,
+  tags: string
+}
+
 function ToggleProject() {
   const [activeFilter, setActiveFilter] = useState("All");
   const dispatch = useDispatch();
@@ -17,13 +25,13 @@ function ToggleProject() {
 
   dispatch(addFilteredProject(datafromSlice));
 
-  const handleWorkFilter =  (item) => {
+  const handleWorkFilter =  (item: string) => {
     setActiveFilter(item);
     setTimeout(() => {
       if (item === "All") {
         dispatch(addFilteredProject(datafromSlice));
       } else {
-        const filtered = datafromSlice.filter((ele) => ele.tags.includes(item));
+        const filtered = datafromSlice.filter((ele: Project) => ele.tags.includes(item));
         console.log(filtered, " filtereed");
         dispatch(addFilteredProject(filtered));
       }

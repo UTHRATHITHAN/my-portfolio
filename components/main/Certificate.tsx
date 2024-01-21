@@ -50,7 +50,7 @@ function Certificate() {
     }
 
     getImage();
-  }, []);
+  }, [toast, dispatch]);
 
   return (
     <section id="badges">

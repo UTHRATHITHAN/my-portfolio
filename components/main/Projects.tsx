@@ -22,7 +22,7 @@ function Projects() {
       setLoader(false);
     }
     getProjects();
-  }, []);
+  }, [dispatch]);
 
   return (
     <section id="projects">

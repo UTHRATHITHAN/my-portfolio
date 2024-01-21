@@ -3,7 +3,7 @@
 
 import React from "react";
 
-function Loader({className}) {
+function Loader({className}: any) {
   return (
     <div role="status">
       <svg

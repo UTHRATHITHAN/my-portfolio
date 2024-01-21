@@ -6,8 +6,14 @@ type ToggleBadge = {
   badge: boolean;
   certificate: boolean;
 };
+
+type Badges = {
+  name: string;
+  data: string;
+  imgURL: string;
+};
 export interface badge {
-  badges: string[];
+  badges: Badges[];
   toggleBadge: ToggleBadge;
   badgeIndex: number;
 }
@@ -25,7 +31,7 @@ export const badgesSlice = createSlice({
   name: "badges",
   initialState,
   reducers: {
-    addBadges: (state, action: PayloadAction<string[]>) => {
+    addBadges: (state, action: PayloadAction<Badges[]>) => {
       state.badges = action.payload;
     },
     toggleBadge: (state, action: PayloadAction<ToggleBadge>) => {
