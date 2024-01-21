@@ -1,5 +1,5 @@
 "use client";
-import nodemailer from "nodemailer";
+import nodemailer from 'nodemailer';
 
 export default async function sendMail(formData) {
   const { name, email, subject, message } = formData;

@@ -9,9 +9,9 @@ function Aboutme() {
     <section id="aboutme" className="h-screen grid place-content-center pb-14">
       <div className="flex flex-col w-full justify-center justify-items-center items-center ">
         <motion.div
-          initial={{ opacity: 0,y:-500 }}
-          animate={{opacity: 1, y: 0 }}
-          transition={{ type: "spring", stiffness: 70,duration:1 }}
+          // initial={{ opacity: 0,y:-500 }}
+          // animate={{opacity: 1, y: 0 }}
+          // transition={{ type: "spring", stiffness: 70,duration:1 }}
           className="md:w-6/12 px-10 text-center"
         >
           <span className="text-5xl font-bold border-b-4 border-b-indigo-500">
