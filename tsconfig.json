@@ -30,6 +30,6 @@
     "components/main/Skill.tsx",
     "components/main/Nav.tsx",
     "components/main/Education.jsx"
-  ],
+, "components/services/mailServices.jsx"  ],
   "exclude": ["node_modules"]
 }

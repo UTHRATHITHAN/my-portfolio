@@ -1,14 +1,9 @@
 "use server";
 import nodemailer from 'nodemailer';
 
-type FormData = {
-    name: string,
-    email: string, 
-    subject: string, 
-    message: string
-}
 
-export default async function sendMail(formData: FormData){
+
+export default async function sendMail(formData){
 const {name, email, subject, message} = formData;
     let transporter = nodemailer.createTransport({
         service: "gmail",
