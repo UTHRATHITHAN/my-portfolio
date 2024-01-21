@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { RootState } from '@/redux/store/store'
 
 type Project = {
   name: string;
@@ -13,7 +14,7 @@ type Project = {
 
 function ProjectCard() {
   const filteredProjectList = useSelector(
-    (state: any) => state.projectsReducer.filteredProject
+    (state: RootState) => state.projectsReducer.filteredProject
   );
   console.log("filteredProjectList", filteredProjectList);
 

@@ -16,7 +16,7 @@ function Certificate() {
   const { toast } = useToast();
   const dispatch = useDispatch();
   const toggleBadge = useSelector(
-    (state: RootState) => state.badge.toggleBadge
+    (state: RootState) => state.badgesReducer.toggleBadge
   );
 
   useEffect(() => {

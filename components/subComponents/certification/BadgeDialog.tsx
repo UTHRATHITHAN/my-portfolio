@@ -10,12 +10,12 @@ import {
 } from "@/components/ui/carousel";
 
 import { useSelector } from "react-redux";
-
+import { RootState } from '@/redux/store/store'
 import Image from "next/image";
 
 function BadgeDialog({ children, badge }: any) {
-  const badgeList = useSelector((state) => state.badgesReducer.badges);
-  const badgeIndex = useSelector((state) => state.badgesReducer.badgeIndex);
+  const badgeList = useSelector((state: RootState) => state.badgesReducer.badges);
+  const badgeIndex = useSelector((state: RootState) => state.badgesReducer.badgeIndex);
 
   return (
     <Dialog>
@@ -24,7 +24,7 @@ function BadgeDialog({ children, badge }: any) {
         <Carousel>
           <CarouselContent className="h-[400px] ">
             {badgeList
-              .map((ele, i) => (
+              .map((ele: any, i: number) => (
                 <CarouselItem
                   key={i}
                   className="flex flex-col justify-center items-center"

@@ -8,8 +8,8 @@ import {
   toggleSkills,
   changeBtnActive,
 } from "@/redux/features/skills/skillsSlice";
-import { boolean } from "zod";
 import { Button } from "@/components/ui/button";
+import { RootState } from '@/redux/store/store'
 
 type BtnActive = {
   frontend: boolean;
@@ -33,7 +33,7 @@ function SkillToggleBar() {
   }
 
   const { frontend, backend, database, devops } = useSelector(
-    (state) => state.skillsReducer.btnActive
+    (state: RootState) => state.skillsReducer.btnActive
   );
 
   return (

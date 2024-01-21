@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addFilteredProject } from "@/redux/features/projects/projectsSlice";
+import { RootState } from '@/redux/store/store'
 
 const projectTech = ["All", "React Js", "Next Js", "Node Js"];
 
@@ -11,7 +12,7 @@ function ToggleProject() {
   const dispatch = useDispatch();
 
   const datafromSlice = useSelector(
-    (state) => state.projectsReducer.projectsList
+    (state: RootState) => state.projectsReducer.projectsList
   );
 
   dispatch(addFilteredProject(datafromSlice));

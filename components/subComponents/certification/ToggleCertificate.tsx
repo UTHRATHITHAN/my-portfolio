@@ -1,11 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleBadge } from "@/redux/features/badges/badgesSlice";
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Ghost } from "lucide-react";
+import { RootState } from '@/redux/store/store'
 
 type Card = {
   badge: boolean;
@@ -14,7 +12,7 @@ type Card = {
 
 function ToggleCertificate() {
   const btnActive = useSelector(
-    (state: any) => state.badgesReducer.toggleBadge
+    (state: RootState) => state.badgesReducer.toggleBadge
   );
 
   const dispatch = useDispatch();
@@ -45,45 +43,9 @@ function ToggleCertificate() {
         Certificate
       </Button>
     </>
-    // <ToggleGroup variant="outline" type="single" className="space-x-5">
-    //   <ToggleGroupItem
-    //     value="bold"
-    //     aria-label="Toggle "
-    //     onClick={() =>
-    //       dispatch(toggleBadge({ badge: true, certificate: false }))
-    //     }
-    //     className={`w-24 text-white  dark:text-white bg-black ${btnActive.badge ? cn('bg-zinc-900 text-white') : ''}`}
-    //     aria-checked
-    //   >
-    //     Badge
-    //   </ToggleGroupItem>
-    //   <ToggleGroupItem
-    //     value="italic"
-    //     aria-label="Toggle "
-    //     onClick={() =>
-    //       dispatch(toggleBadge({ badge: false, certificate: true }))
-    //     }
-    //     className={`w-24 text-black  dark:text-white ${btnActive.certificate ? cn('bg-zinc-900 text-white') : ''}`}
-    //   >
-    //     Certificate
-    //   </ToggleGroupItem>
-    // </ToggleGroup>
+
   );
 }
 
 export default ToggleCertificate;
 
-
-// ${
-//   btnActive.badge
-//     ? "bg-black text-white dark:bg-white dark:text-black"
-//     : "bg-white text-black dark:bg-black dark:text-white"
-// }
-
-
-
-// ${
-//   btnActive.certificate
-//     ? "bg-black text-white dark:bg-white dark:text-black"
-//     : "bg-white text-black dark:bg-black dark:text-white"
-// }

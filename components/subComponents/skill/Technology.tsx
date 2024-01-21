@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Loader from "@/components/subComponents/Loader";
 import Image from "next/image";
+import { RootState } from '@/redux/store/store'
 
 type Skill = {
   name: string;
@@ -14,7 +15,7 @@ type Skill = {
 function Technology() {
   const [loader, setLoader] = useState(true);
   const [skills, setSkill] = useState([]);
-  const tech = useSelector((state) => state.skillsReducer.toggleSkills);
+  const tech = useSelector((state: RootState) => state.skillsReducer.toggleSkills);
 
   useEffect(() => {
     async function getSkillLogo() {
@@ -32,7 +33,7 @@ function Technology() {
     <div className="w-[400px] h-[370px] mt-10  flex justify-center items-center 	flex-wrap	  gap-x-14 gap-y-10">
       {loader ? (
         <Loader className="w-8 h-8 animate-spin text-gray-400 fill-white dark:text-zinc-600 dark:fill-white" />
-        // className="w-8 h-8 text-gray-200 animate-spin  dark:text-zinc-600 fill-white"
+    
       ) : (
         skills.map((skill: Skill) =>
           skill.tag === tech ? (
