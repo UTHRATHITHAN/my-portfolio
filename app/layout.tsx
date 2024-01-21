@@ -24,7 +24,7 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
     >
-      <body className={`${font.className} `}>
+      <body className={` scrollbar-thin  scrollbar-rounded-sm  scrollbar-w-[2px] scrollbar-thumb-zinc-400 scrollbar-track-white dark:scrollbar-thumb-white dark:scrollbar-track-black ${font.className} `}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

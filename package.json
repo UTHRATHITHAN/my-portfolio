@@ -39,6 +39,7 @@
     "react-redux": "^9.0.4",
     "react-vertical-timeline-component": "^3.6.0",
     "tailwind-merge": "^2.2.0",
+    "tailwind-scrollbar": "^3.0.5",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.22.4"
   },

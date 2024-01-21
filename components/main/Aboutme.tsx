@@ -4,7 +4,9 @@ import { Button } from "../ui/button";
 import Socials from "../subComponents/Socials";
 import { motion } from "framer-motion";
 
+
 function Aboutme() {
+
   return (
     <section id="aboutme" className="h-screen grid place-content-center pb-14">
       <div className="flex flex-col w-full justify-center justify-items-center items-center ">
@@ -12,7 +14,7 @@ function Aboutme() {
           // initial={{ opacity: 0,y:-500 }}
           // animate={{opacity: 1, y: 0 }}
           // transition={{ type: "spring", stiffness: 70,duration:1 }}
-          className="md:w-6/12 px-10 text-center"
+          className="md:w-10/12 px-10 text-center"
         >
           <span className="text-5xl font-bold border-b-4 border-b-indigo-500">
             Hi,
@@ -32,11 +34,12 @@ function Aboutme() {
           </div>
         </motion.div>
 
-        <div className="md:w-6/12 text-center text-2xl px-5 mt-16">
+        <div  className={` md:w-6/12 text-center text-2xl px-5 mt-16 `}>
           As a passionate and aspiring web developer. I am dedicated to crafting
-          user-friendly digital experiences in freshers Presepective. Unlocking
+          user-friendly digital experiences. Unlocking
           the digital realm with lines of code from concept to creation.
         </div>
+     
 
         <motion.div
           className="mt-2 pt-10 pb-3"
@@ -50,7 +53,7 @@ function Aboutme() {
             <Button className="p-6">Resume</Button>
           </a>
         </motion.div>
-        <Socials className="mt-10" />
+        <Socials className="mt-16 w-8/12  md:w-2/12" />
       </div>
     </section>
   );
