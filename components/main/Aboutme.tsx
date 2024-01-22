@@ -4,9 +4,7 @@ import { Button } from "../ui/button";
 import Socials from "../subComponents/Socials";
 import { motion } from "framer-motion";
 
-
 function Aboutme() {
-
   return (
     <section id="aboutme" className="h-screen grid place-content-center pb-14">
       <div className="flex flex-col w-full justify-center justify-items-center items-center ">
@@ -34,12 +32,11 @@ function Aboutme() {
           </div>
         </motion.div>
 
-        <div  className={` md:w-6/12 text-center text-2xl px-5 mt-16 `}>
+        <div className={` md:w-6/12 text-center text-2xl px-5 mt-16 `}>
           As a passionate and aspiring web developer. I am dedicated to crafting
-          user-friendly digital experiences. Unlocking
-          the digital realm with lines of code from concept to creation.
+          user-friendly digital experiences. Unlocking the digital realm with
+          lines of code from concept to creation.
         </div>
-     
 
         <motion.div
           className="mt-2 pt-10 pb-3"
@@ -47,7 +44,7 @@ function Aboutme() {
           whileTap={{ scale: 0.9 }}
         >
           <a
-            href="https://drive.google.com/file/d/11Vljt0qkGllqOLpgw6b78SBQmDRUdZes/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1Ztj6JggfMyJ-vKcdL_gm3kAmbIe5VaKK/view?usp=sharing"
             target="#"
           >
             <Button className="p-6">Resume</Button>
