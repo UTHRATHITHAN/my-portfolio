@@ -14,7 +14,7 @@ function Skills() {
         </p>
 
         <div className="flex flex-col  justify-center items-center md:flex-row-reverse md:gap-40">
-          <div className="mt-10 flex border-2 px-4 rounded-sm p-3 md:p-2 space-x-5 md:space-x-0 md:flex-col md:mt-0 md:py-10  md:justify-between md:items-center md:space-y-5 md:w-[110px] text-zinc-700">
+          <div className="mt-10 flex border-2 px-4 rounded-sm p-3 md:p-2 space-x-5 md:space-x-0 md:flex-col md:mt-0 md:py-10  md:justify-between md:items-center md:space-y-5 w-11/12 md:w-[110px] text-zinc-700">
             <SkillToggleBar />
           </div>
     
