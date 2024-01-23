@@ -39,7 +39,7 @@ function SkillToggleBar() {
   return (
     <ToggleGroup
       type="single"
-      className=" justify-center  md:flex md:flex-col md:space-y-2  md:space-x-0 "
+      className="flex min-w-fit justify-center  md:flex md:flex-col md:space-y-2  md:space-x-0 "
     >
       <Button
         value="frontend"
