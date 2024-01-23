@@ -39,7 +39,7 @@ function SkillToggleBar() {
   return (
     <ToggleGroup
       type="single"
-      className=" md:flex md:flex-col md:space-y-2 space-x-2 md:space-x-0"
+      className=" justify-center  md:flex md:flex-col md:space-y-2  md:space-x-0 "
     >
       <Button
         value="frontend"
@@ -52,7 +52,7 @@ function SkillToggleBar() {
 
       <Separator
         // orientation="vertical"
-        className=" h-6 w-[1px] md:h-[1px] md:w-[50px]"
+        className=" h-6 w-[1px] md:h-[1px] md:w-[50px] hidden md:block"
       />
       <Button
         value="backend"
@@ -64,7 +64,7 @@ function SkillToggleBar() {
       </Button>
       <Separator
         orientation="vertical"
-        className="h-6 md:h-[1px] md:w-[50px] "
+        className="h-6 md:h-[1px] md:w-[50px] hidden md:block"
       />
       <Button
         value="database"
@@ -76,12 +76,12 @@ function SkillToggleBar() {
       </Button>
       <Separator
         orientation="vertical"
-        className="h-6 md:h-[1px] md:w-[50px] "
+        className="h-6 md:h-[1px] md:w-[50px] hidden md:block"
       />
       <Button
         value="devops"
         aria-label="Toggle "
-        className={`border-0 w-[85px] p-2  rounded-md  text-center ${devops || "bg-transparent text-black dark:text-white"}`}
+        className={` border-0 w-[85px] ml-0  rounded-md  text-center ${devops || "bg-transparent text-black dark:text-white"}`}
         onClick={() => togglehandler("devops", true)}
       >
         DevOps
