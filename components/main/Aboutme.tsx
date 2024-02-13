@@ -18,14 +18,14 @@ function Aboutme() {
             Hi,
           </span>
           <div>
-            <div className="text-3xl md:text-5xl  mt-4 font-bold text-wrap">
+            <div className="text-3xl md:text-5xl md:mt-8 mt-4 font-bold text-wrap">
               <span>I</span>
               <span className="text-indigo-500">&apos;</span>
               <span>m</span>
               <span className="text-indigo-500">,</span>
               <span>Uthrathithan</span>
 
-              <div className="mt-2  text-zinc-700 ">
+              <div className="md:mt-5 mt-2 text-zinc-700 ">
                 <span>Full Stack Developer</span>
               </div>
             </div>
