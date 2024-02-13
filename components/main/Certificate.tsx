@@ -64,7 +64,7 @@ function Certificate() {
             <ToggleCertificate />
           </div>
 
-          <div className=" flex justify-center items-center w-5/6 md:w-11/12 h-fit p-8 mt-10 rounded-sm">
+          <div className=" flex justify-center items-center w-12/12 md:w-10/12 h-fit p-8 mt-10 rounded-sm">
             {loader ? (
               <div className="h-96 grid place-content-center">
                 <Loader className="w-8 h-8 animate-spin text-gray-400 fill-white dark:text-zinc-600 dark:fill-white" />

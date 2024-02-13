@@ -11,11 +11,11 @@ function Badge() {
   const badges = useSelector((state: RootState) => state.badgesReducer.badges);
 
   return (
-    <div className="items-center grid grid-cols-2 md:grid-cols-3  md:gap-x-28 md:gap-y-12">
+    <div className="items-center grid grid-cols-2 md:grid-cols-3  md:gap-x-28 md:gap-y-12 ">
       {badges.map((badge: any, i: number) => (
         <BadgeDialog key={i + 1} badge={badge} >
           <Image
-            className="p-5 md:p-0"
+            className="p-5 md:p-0 "
             src={badge.imgURL}
             width={200}
             height={200}

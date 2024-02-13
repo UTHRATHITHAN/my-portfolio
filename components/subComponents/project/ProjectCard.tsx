@@ -29,10 +29,10 @@ function ProjectCard() {
           <motion.div
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="w-[320px] h-96 bg-white rounded-md flex flex-col items-center shadow-2xl"
+            className="w-[260px] sm:w-[320px] h-96 bg-white rounded-md flex flex-col items-center shadow-2xl"
             key={i}
           >
-            <div className="relative w-[300px] mt-[10px]   h-4/6 rounded-md flex justify-center  ">
+            <div className="relative w-[240px] md:w-[300px] mt-[10px]   h-4/6 rounded-md flex justify-center  ">
               <div className="relative grid place-content-center grid-cols-2 justify-items-center w-full h-full  bg-black">
                 {ele.img && (
                   <Image

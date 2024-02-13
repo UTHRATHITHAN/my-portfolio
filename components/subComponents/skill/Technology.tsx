@@ -30,7 +30,7 @@ function Technology() {
   }, []);
 
   return (
-    <div className=" w-[360px] sm:w-[400px] h-[370px] mt-10  flex justify-center items-center	flex-wrap	gap-x-10  md:gap-x-14 gap-y-10">
+    <div className=" w-[340px] sm:w-[400px] h-[370px] mt-10  flex justify-center items-center	flex-wrap	gap-x-10  md:gap-x-14 gap-y-10">
 
       {loader ? (
         <Loader className="w-8 h-8 animate-spin text-gray-400 fill-white dark:text-zinc-600 dark:fill-white" />
