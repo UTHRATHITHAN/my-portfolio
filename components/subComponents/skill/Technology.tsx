@@ -30,7 +30,8 @@ function Technology() {
   }, []);
 
   return (
-    <div className="w-[400px] h-[370px] mt-10  flex justify-center items-center 	flex-wrap	gap-x-10  md:gap-x-14 gap-y-10">
+    <div className=" w-[360px] sm:w-[400px] h-[370px] mt-10  flex justify-center items-center	flex-wrap	gap-x-10  md:gap-x-14 gap-y-10">
+
       {loader ? (
         <Loader className="w-8 h-8 animate-spin text-gray-400 fill-white dark:text-zinc-600 dark:fill-white" />
     
@@ -38,10 +39,11 @@ function Technology() {
         skills.map((skill: Skill) =>
           skill.tag === tech ? (
             <div
-              className="h-24 w-24 bg-zinc-900 rounded-sm flex justify-center items-center"
+              className=" min-[340px]:h-20  min-[340px]:w-[80px]   h-24 w-24  bg-zinc-900 rounded-sm flex justify-center items-center"
               key={skill.name}
             >
               <Image
+           
                 src={skill.skillURL}
                 alt={skill.name}
                 width={70}
@@ -53,7 +55,8 @@ function Technology() {
           )
         )
       )}
-    </div>
+      </div>
+
   );
 }
 

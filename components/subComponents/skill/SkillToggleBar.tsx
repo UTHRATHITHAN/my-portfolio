@@ -9,7 +9,7 @@ import {
   changeBtnActive,
 } from "@/redux/features/skills/skillsSlice";
 import { Button } from "@/components/ui/button";
-import { RootState } from '@/redux/store/store'
+import { RootState } from "@/redux/store/store";
 
 type BtnActive = {
   frontend: boolean;
@@ -37,14 +37,13 @@ function SkillToggleBar() {
   );
 
   return (
-    <ToggleGroup
-      type="single"
-      className=" md:flex md:flex-col md:space-y-2   "
-    >
+    <ToggleGroup type="single" className=" md:flex md:flex-col    md:space-y-2">
       <Button
         value="frontend"
         aria-label="Toggle "
-        className={`border-0 w-[85px] p-2  rounded-md  text-center ${frontend || "bg-transparent text-black dark:text-white"}`}
+        className={`border-0  w-[70px] sm:w-[85px] rounded-md text-[13px] text-center ${
+          frontend || "bg-transparent text-black dark:text-white"
+        }`}
         onClick={() => togglehandler("frontend", true)}
       >
         Front End
@@ -57,7 +56,9 @@ function SkillToggleBar() {
       <Button
         value="backend"
         aria-label="Toggle "
-        className={`border-0 w-[85px] rounded-md  text-center ${backend || "bg-transparent text-black dark:text-white"}`}
+        className={`border-0 w-[70px] sm:w-[85px] rounded-md text-[13px] text-center ${
+          backend || "bg-transparent text-black dark:text-white"
+        }`}
         onClick={() => togglehandler("backend", true)}
       >
         Back End
@@ -69,7 +70,9 @@ function SkillToggleBar() {
       <Button
         value="database"
         aria-label="Toggle "
-        className={`border-0 w-[85px]  p-2  rounded-md  text-center ${database || "bg-transparent text-black dark:text-white"}`}
+        className={`border-0 w-[70px] sm:w-[85px]  rounded-md  text-[13px] text-center ${
+          database || "bg-transparent text-black dark:text-white"
+        }`}
         onClick={() => togglehandler("database", true)}
       >
         Database
@@ -81,7 +84,9 @@ function SkillToggleBar() {
       <Button
         value="devops"
         aria-label="Toggle "
-        className={` border-0 w-[85px] ml-0  rounded-md  text-center ${devops || "bg-transparent text-black dark:text-white"}`}
+        className={` border-0 w-[70px] sm:w-[85px] ml-0  rounded-md text-[13px] text-center ${
+          devops || "bg-transparent text-black dark:text-white"
+        }`}
         onClick={() => togglehandler("devops", true)}
       >
         DevOps
