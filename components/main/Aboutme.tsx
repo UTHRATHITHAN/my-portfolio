@@ -44,7 +44,7 @@ function Aboutme() {
           whileTap={{ scale: 0.9 }}
         >
           <a
-            href="https://drive.google.com/file/d/13IqSJG2ZDFHhgJgilflax3FtEzLBlqlj/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1FVlljAi6WdOjKxUsgtECZqAzO7s7T7WA/view?usp=sharing"
             target="#"
           >
             <Button className="p-6 text-sm md:text-base">Resume</Button>

@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { cn } from "@/lib/utils";
 import StarBackground from "@/components/helpers/StarBackground";
 import { Toaster } from "@/components/ui/toaster"
-
+import { Analytics } from "@vercel/analytics/react"
 const font = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -34,6 +34,7 @@ export default function RootLayout({
           <StarBackground />
 
           {children}
+          <Analytics />
           <Toaster />
         </ThemeProvider>
       </body>
