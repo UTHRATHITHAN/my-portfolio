@@ -32,7 +32,9 @@ function Aboutme() {
           </div>
         </motion.div>
 
-        <div className={` md:w-6/12 text-center text-md md:text-2xl px-5 mt-16 `}>
+        <div
+          className={` md:w-6/12 text-center text-md md:text-2xl px-5 mt-16 `}
+        >
           As a passionate and aspiring web developer. I am dedicated to crafting
           user-friendly digital experiences. Unlocking the digital realm with
           lines of code from concept to creation.
@@ -44,7 +46,7 @@ function Aboutme() {
           whileTap={{ scale: 0.9 }}
         >
           <a
-            href="https://drive.google.com/file/d/1FVlljAi6WdOjKxUsgtECZqAzO7s7T7WA/view?usp=sharing"
+            href="https://drive.google.com/file/d/1-JI0L2Ke1ieew8xajMsJeSNCzTaEg1Jt/view?usp=sharing"
             target="#"
           >
             <Button className="p-6 text-sm md:text-base">Resume</Button>
