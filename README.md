@@ -11,7 +11,7 @@ Welcome to my web portfolio! This repository contains the source code and assets
 
 ## Demo
 
-Check out the live demo of my portfolio at [https://uthrathithan.vercel.app/](#).
+Check out the live demo of my portfolio at [https://uthrathithan.vercel.app/](https://uthrathithan.vercel.app/).
 
 ## Technologies Used
 
