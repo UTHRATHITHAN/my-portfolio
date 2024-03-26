@@ -46,7 +46,7 @@ function Aboutme() {
           whileTap={{ scale: 0.9 }}
         >
           <a
-            href="https://drive.google.com/file/d/1-JI0L2Ke1ieew8xajMsJeSNCzTaEg1Jt/view?usp=sharing"
+            href={process.env.GOOGLE_DRIVE_RESUME_LINK}
             target="#"
           >
             <Button className="p-6 text-sm md:text-base">Resume</Button>
